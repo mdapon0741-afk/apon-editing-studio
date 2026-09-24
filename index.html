@@ -1,0 +1,1275 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>APON EDITING STUDIO | Aminul Islam</title>
+
+<style>
+
+/* =========================
+   BASIC
+========================= */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:#050812;
+    color:#fff;
+    font-family:Arial,sans-serif;
+}
+
+a{
+    text-decoration:none;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:760px;
+    height:100vh;
+    position:relative;
+    overflow:hidden;
+    background:#050812;
+}
+
+.photo{
+    position:absolute;
+    right:0;
+    top:0;
+    width:60%;
+    height:100%;
+    overflow:hidden;
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center center;
+}
+
+.photo:after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        #050812 0%,
+        rgba(5,8,18,.75) 12%,
+        rgba(5,8,18,.05) 48%,
+        transparent 100%
+    );
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.nav{
+    position:absolute;
+    z-index:10;
+
+    left:0;
+    right:0;
+    top:0;
+
+    height:88px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 6%;
+
+    background:rgba(3,6,14,.45);
+
+    border-bottom:
+    1px solid rgba(255,255,255,.08);
+}
+
+.brand{
+    font-weight:800;
+    letter-spacing:2px;
+}
+
+.brand span{
+    color:#27d9ff;
+}
+
+.links{
+    display:flex;
+    gap:30px;
+    font-size:13px;
+}
+
+.links a{
+    color:#fff;
+    transition:.3s;
+}
+
+.links a:hover{
+    color:#27d9ff;
+}
+
+
+/* =========================
+   HERO TEXT
+========================= */
+
+.copy{
+    position:absolute;
+    z-index:4;
+
+    left:7%;
+    top:22%;
+
+    width:45%;
+    max-width:620px;
+}
+
+.eyebrow{
+    color:#27d9ff;
+    letter-spacing:4px;
+    font-size:13px;
+    font-weight:700;
+}
+
+.copy h1{
+    font-size:clamp(48px,6vw,88px);
+    line-height:.95;
+    margin:16px 0;
+}
+
+.copy h1 span{
+    color:#27d9ff;
+}
+
+.sub{
+    font-size:18px;
+    color:#c9d1df;
+    margin-bottom:26px;
+}
+
+.title{
+    font-size:clamp(28px,3vw,46px);
+    font-weight:800;
+    line-height:1;
+}
+
+.title span{
+    color:#27d9ff;
+}
+
+.desc{
+    color:#aab4c7;
+    line-height:1.7;
+    max-width:500px;
+}
+
+.buttons{
+    display:flex;
+    gap:14px;
+    margin-top:30px;
+}
+
+.btn{
+    padding:14px 22px;
+
+    border:1px solid #27d9ff;
+
+    color:#fff;
+
+    border-radius:3px;
+
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#27d9ff;
+    color:#041018;
+}
+
+.primary{
+    background:#27d9ff;
+    color:#041018;
+}
+
+
+/* =========================
+   FEATURE BAR
+========================= */
+
+.features{
+    position:absolute;
+    z-index:6;
+
+    bottom:0;
+    left:0;
+    right:0;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    background:rgba(4,7,15,.9);
+
+    border-top:
+    1px solid rgba(39,217,255,.35);
+}
+
+.feature{
+    padding:22px 28px;
+
+    border-right:
+    1px solid rgba(255,255,255,.08);
+}
+
+.num{
+    color:#27d9ff;
+    font-size:12px;
+}
+
+.feature b{
+    display:block;
+    margin-top:7px;
+}
+
+.feature small{
+    color:#8f9bad;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section{
+    padding:90px 8%;
+    background:#070b15;
+}
+
+.section h2{
+    font-size:42px;
+    margin-top:0;
+    margin-bottom:30px;
+}
+
+.section h3{
+    font-size:23px;
+}
+
+.section p{
+    color:#aab4c7;
+    line-height:1.8;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+}
+
+.card{
+    padding:30px;
+
+    background:#0d1321;
+
+    border:
+    1px solid #172237;
+
+    border-radius:6px;
+
+    transition:.3s;
+}
+
+.card:hover{
+    border-color:#27d9ff;
+
+    transform:
+    translateY(-4px);
+}
+
+.card h3{
+    margin-top:0;
+}
+
+.card p{
+    color:#aab4c7;
+    line-height:1.7;
+}
+
+
+/* =========================
+   PORTFOLIO
+========================= */
+
+.portfolio-section{
+    background:
+    linear-gradient(
+        180deg,
+        #070b15,
+        #050912
+    );
+}
+
+.portfolio-card{
+    overflow:hidden;
+    padding:30px;
+}
+
+
+/* VIDEO THUMBNAIL */
+
+.video-box{
+    height:220px;
+
+    margin:
+    -30px
+    -30px
+    25px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:#050812;
+}
+
+.video-thumbnail{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:
+    transform .5s ease;
+}
+
+.portfolio-card:hover
+.video-thumbnail{
+    transform:scale(1.04);
+}
+
+
+/* PLAY BUTTON */
+
+.play-btn{
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:
+    translate(-50%,-50%);
+
+    width:70px;
+    height:70px;
+
+    border-radius:50%;
+
+    background:#27d9ff;
+
+    color:#041018 !important;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    font-size:24px;
+
+    padding-left:4px;
+
+    box-shadow:
+    0 0 35px
+    rgba(39,217,255,.6);
+
+    transition:.3s;
+}
+
+.play-btn:hover{
+    transform:
+    translate(-50%,-50%)
+    scale(1.12);
+
+    background:#fff;
+}
+
+
+/* WATCH BUTTON */
+
+.watch-btn{
+    display:inline-block;
+
+    padding:
+    11px
+    18px;
+
+    border:
+    1px solid #27d9ff;
+
+    border-radius:4px;
+
+    color:#27d9ff !important;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+.watch-btn:hover{
+    background:#27d9ff;
+
+    color:#041018 !important;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.service-card{
+    min-height:180px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    text-align:center;
+}
+
+.contact a{
+    color:#27d9ff;
+}
+
+
+
+/* PROJECT SELL */
+.project-sell-card{min-height:180px;cursor:pointer;position:relative;overflow:hidden}.project-sell-card .sell-icon{font-size:32px;margin-bottom:12px}.sell-badge{display:inline-block;margin-top:10px;padding:7px 11px;border:1px solid rgba(39,217,255,.45);border-radius:4px;color:#27d9ff;font-size:12px;font-weight:700}.project-sell-card:hover .sell-badge{background:#27d9ff;color:#041018}
+.project-modal{display:none;position:fixed;z-index:9999;inset:0;padding:35px 18px;background:rgba(2,5,12,.94);backdrop-filter:blur(10px);overflow-y:auto}.project-modal.active{display:block}.project-modal-inner{width:min(1180px,100%);margin:auto;background:#080d19;border:1px solid #172237;border-radius:10px;padding:28px;box-shadow:0 25px 80px rgba(0,0,0,.55)}.project-modal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:25px}.project-modal-head h2{margin:0;font-size:32px}.project-modal-head p{margin:8px 0 0;color:#8f9bad}.project-close{width:42px;height:42px;border:1px solid #27d9ff;border-radius:50%;background:transparent;color:#27d9ff;font-size:24px;cursor:pointer}.project-close:hover{background:#27d9ff;color:#041018}.project-list{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.project-item{overflow:hidden;background:#0d1321;border:1px solid #172237;border-radius:7px;transition:.3s}.project-item:hover{border-color:#27d9ff;transform:translateY(-4px)}.project-thumb{position:relative;height:190px;background:#050812;overflow:hidden}.project-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:.4s}.project-item:hover .project-thumb img{transform:scale(1.05)}.project-number{position:absolute;left:12px;top:12px;padding:6px 9px;background:rgba(5,8,18,.8);border:1px solid rgba(39,217,255,.5);border-radius:4px;color:#27d9ff;font-size:11px;font-weight:700}.project-info{padding:18px}.project-info h3{margin:0 0 8px;font-size:19px}.project-info p{margin:0 0 15px;color:#8f9bad;line-height:1.6;font-size:13px}.project-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px}.project-price{color:#27d9ff;font-size:20px;font-weight:800}.project-actions{display:flex;gap:8px}.project-preview,.project-buy{display:inline-block;padding:9px 12px;border-radius:4px;font-size:12px;font-weight:700;transition:.3s}.project-preview{border:1px solid #27d9ff;color:#27d9ff}.project-preview:hover{background:#27d9ff;color:#041018}.project-buy{background:#27d9ff;color:#041018;border:1px solid #27d9ff}.project-buy:hover{background:#fff;border-color:#fff}body.modal-open{overflow:hidden}@media(max-width:950px){.project-list{grid-template-columns:repeat(2,1fr)}}@media(max-width:600px){.project-modal{padding:15px 10px}.project-modal-inner{padding:18px}.project-modal-head h2{font-size:25px}.project-list{grid-template-columns:1fr}.project-thumb{height:210px}.project-bottom{align-items:flex-start;flex-direction:column}.project-actions{width:100%}.project-preview,.project-buy{flex:1;text-align:center}}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px){
+
+    .hero{
+        height:auto;
+        min-height:1100px;
+    }
+
+    .photo{
+        top:88px;
+
+        width:100%;
+
+        height:48%;
+    }
+
+    .photo:after{
+
+        background:
+        linear-gradient(
+            180deg,
+            transparent 40%,
+            #050812 100%
+        );
+    }
+
+    .copy{
+        top:55%;
+
+        left:7%;
+
+        width:86%;
+    }
+
+    .links{
+        display:none;
+    }
+
+    .features{
+        grid-template-columns:
+        1fr 1fr;
+    }
+
+    .grid{
+        grid-template-columns:
+        1fr;
+    }
+
+    .feature{
+        padding:16px;
+    }
+
+    .section{
+        padding:
+        65px 7%;
+    }
+
+    .section h2{
+        font-size:34px;
+    }
+
+    .video-box{
+        height:200px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+
+<nav class="nav">
+
+<div class="brand">
+APON <span>EDITING STUDIO</span>
+</div>
+
+
+<div class="links">
+
+<a href="#home">HOME</a>
+
+<a href="#about">ABOUT</a>
+
+<a href="#portfolio">PORTFOLIO</a>
+
+<a href="#services">SERVICES</a>
+
+<a href="#contact">CONTACT</a>
+
+</div>
+
+</nav>
+
+
+<!-- ORIGINAL PHOTO -->
+
+<div class="photo">
+
+<img
+src="cover.jpg"
+alt="Aminul Islam original photo">
+
+</div>
+
+
+<!-- HERO CONTENT -->
+
+<div class="copy">
+
+<div class="eyebrow">
+VIDEO EDITOR • COLORIST
+</div>
+
+
+<h1>
+AMINUL <span>ISLAM</span>
+</h1>
+
+
+<div class="sub">
+Professional Video Editor &amp; Colorist
+</div>
+
+
+<div class="title">
+APON EDITING <span>STUDIO</span>
+</div>
+
+
+<p class="desc">
+Premium cinematic editing, wedding films,
+commercial visuals and professional color grading.
+</p>
+
+
+<div class="buttons">
+
+<a
+class="btn primary"
+href="#portfolio">
+VIEW WORK
+</a>
+
+
+<a
+class="btn"
+href="#contact">
+GET IN TOUCH
+</a>
+
+</div>
+
+</div>
+
+
+<!-- FEATURE BAR -->
+
+<div class="features">
+
+
+<div class="feature">
+
+<div class="num">
+01
+</div>
+
+<b>
+VIDEO EDITING
+</b>
+
+<small>
+Premium cinematic cuts
+</small>
+
+</div>
+
+
+<div class="feature">
+
+<div class="num">
+02
+</div>
+
+<b>
+COLOR GRADING
+</b>
+
+<small>
+Clean cinematic tones
+</small>
+
+</div>
+
+
+<div class="feature">
+
+<div class="num">
+03
+</div>
+
+<b>
+WEDDING FILMS
+</b>
+
+<small>
+Emotional storytelling
+</small>
+
+</div>
+
+
+<div class="feature">
+
+<div class="num">
+04
+</div>
+
+<b>
+SOCIAL MEDIA
+</b>
+
+<small>
+Modern reels &amp; content
+</small>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section
+class="section"
+id="about">
+
+<h2>
+About Me
+</h2>
+
+
+<h3>
+Crafting Stories. Creating Impact.
+</h3>
+
+
+<p>
+I’m <strong>Aminul Islam</strong>,
+a <strong>Professional Video Editor &amp; Colorist</strong>
+passionate about transforming raw footage into
+powerful cinematic experiences.
+</p>
+
+
+<p>
+I specialize in
+<strong>Wedding Films, Cinematic Videos,
+Commercial Content, and Social Media Edits</strong>,
+with a strong focus on storytelling, visual rhythm,
+color, and detail.
+</p>
+
+
+<p>
+My approach combines
+<strong>creative editing with professional color grading</strong>
+to bring out the mood, emotion, and personality
+of every project.
+</p>
+
+
+<p>
+<strong>
+Your footage is more than just clips —
+it’s a story waiting to be told.
+</strong>
+</p>
+
+</section>
+
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section
+class="section"
+id="skills">
+
+<h2>
+My Skills
+</h2>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>
+Video Editing
+</h3>
+
+<p>
+Cinematic storytelling, pacing,
+transitions, and professional timeline editing.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+Color Grading
+</h3>
+
+<p>
+Creative cinematic looks, skin-tone protection,
+mood creation, and professional color correction.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+Wedding Films
+</h3>
+
+<p>
+Emotional storytelling, highlight films,
+teaser edits, and cinematic wedding videos.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+Commercial &amp; Social Media
+</h3>
+
+<p>
+Engaging reels, promotional videos,
+branded content, and social-media-ready edits.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     WHY CHOOSE ME
+========================= -->
+
+<section
+class="section"
+id="why">
+
+<h2>
+Why Choose Me?
+</h2>
+
+
+<div class="grid">
+
+
+<div class="card">
+
+<h3>
+🎬 Story-Driven Editing
+</h3>
+
+<p>
+Every cut has a purpose. I focus on creating
+a natural flow that keeps viewers connected.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+🎨 Cinematic Visuals
+</h3>
+
+<p>
+Professional editing and color grading designed
+to give your footage a premium cinematic feel.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+✨ Attention to Detail
+</h3>
+
+<p>
+From the smallest transition to the final color,
+every element is carefully refined.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<h3>
+🤝 Client-Focused Approach
+</h3>
+
+<p>
+Your vision comes first. I work to understand
+your style and turn your ideas into a finished film.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
+<section
+class="section"
+id="experience">
+
+<h2>
+Experience
+</h2>
+
+
+<div class="card">
+
+<h3>
+Professional Video Editor &amp; Colorist
+</h3>
+
+
+<p>
+<strong>
+APON EDITING STUDIO
+</strong>
+</p>
+
+
+<p>
+Focused on creating premium visual content across
+<strong>
+Wedding, Cinematic, Commercial,
+and Social Media
+</strong>
+projects.
+</p>
+
+
+<p>
+
+<strong>
+My mission:
+</strong>
+
+<br>
+
+“Transforming moments into cinematic stories.”
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     PORTFOLIO
+========================= -->
+
+<section
+class="section portfolio-section"
+id="portfolio">
+
+
+<h2>
+Portfolio
+</h2>
+
+
+<div class="grid">
+
+
+<!-- WEDDING FILM -->
+
+<div class="card portfolio-card">
+
+
+<div class="video-box">
+
+
+<img
+ src="wedding-thumb.jpg.png" alt="Premium Cinematic Wedding Film" class="video-thumbnail">
+alt="Premium Cinematic Wedding Film"
+class="video-thumbnail"
+>
+
+
+<a
+href="https://drive.google.com/file/d/1RaLGa8hCnxkpptP-gtOqHTFB86GgPJsy/view?usp=sharing"
+target="_blank"
+class="play-btn">
+
+▶
+
+</a>
+
+</div>
+
+
+<h3>
+Premium Cinematic Wedding Film
+</h3>
+
+
+<p>
+Emotional storytelling, cinematic editing
+and professional color grading.
+</p>
+
+
+<a
+href="https://drive.google.com/file/d/1RaLGa8hCnxkpptP-gtOqHTFB86GgPJsy/view?usp=sharing"
+target="_blank"
+class="watch-btn">
+
+▶ Watch Video
+
+</a>
+
+
+</div>
+
+
+
+<!-- CINEMATIC VIDEO -->
+
+<div class="card portfolio-card">
+
+<h3>
+Cinematic Videos
+</h3>
+
+<p>
+More cinematic projects coming soon.
+</p>
+
+</div>
+
+
+
+<!-- COMMERCIAL -->
+
+<div class="card portfolio-card">
+
+<h3>
+Commercial
+</h3>
+
+<p>
+More commercial projects coming soon.
+</p>
+
+</div>
+
+
+
+<!-- SOCIAL MEDIA -->
+
+<div class="card portfolio-card">
+
+<h3>
+Social Media Reels
+</h3>
+
+<p>
+More social media projects coming soon.
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section
+class="section"
+id="services">
+
+<h2>
+Services
+</h2>
+
+
+<div class="grid">
+
+
+<div class="card service-card">
+
+<h3>
+Video Editing
+</h3>
+
+<p>
+Professional cinematic video editing
+and storytelling.
+</p>
+
+</div>
+
+
+<div class="card service-card">
+
+<h3>
+Color Grading
+</h3>
+
+<p>
+Creative cinematic looks,
+color correction and skin-tone protection.
+</p>
+
+</div>
+
+
+<div class="card service-card">
+
+<h3>
+Wedding Films
+</h3>
+
+<p>
+Wedding highlights, teasers and
+emotional cinematic films.
+</p>
+
+</div>
+
+
+<div class="card service-card">
+
+<h3>
+Commercial &amp; Social Media
+</h3>
+
+<p>
+Promotional videos, branded content
+and engaging social media reels.
+</p>
+
+</div>
+<div class="card service-card project-sell-card" onclick="openProjectModal()">
+<div class="sell-icon">🛒</div><h3>Project Sell</h3><p>Ready-made cinematic projects, templates and editing files for your next project.</p><span class="sell-badge">VIEW 10 PROJECTS →</span>
+</div>
+
+
+
+</div>
+
+</section>
+
+
+
+
+<div class="project-modal" id="projectModal" onclick="closeProjectModal(event)"><div class="project-modal-inner"><div class="project-modal-head"><div><h2>Project Sell</h2><p>Choose a project to preview and purchase.</p></div><button class="project-close" onclick="closeProjectModal(event)">×</button></div><div class="project-list"><div class="project-item"><div class="project-thumb"><img src="project-01.jpg" alt="Project 01 Thumbnail"><span class="project-number">PROJECT 01</span></div><div class="project-info"><h3>PROJECT NAME 01</h3><p>Replace this with your project description.</p><div class="project-bottom"><span class="project-price">৳1,500</span><div class="project-actions"><a class="project-preview" href="YOUR_DRIVE_PREVIEW_LINK_01" target="_blank">▶ Preview</a><a class="project-buy" href="https://wa.me/8801767760741?text=Hello%20Apon%20Editing%20Studio,%20I%20want%20to%20buy%20PROJECT%20NAME%2001" target="_blank">Buy</a></div></div></div></div><div class="project-item"><div class="project-thumb"><img src="project-02.jpg" alt="Project 02 Thumbnail"><span class="project-number">PROJECT 02</span></div><div class="project-info"><h3>PROJECT NAME 02</h3><p>Replace this with your project description.</p><div class="project-bottom"><span class="project-price">৳1,500</span><div class="project-actions"><a class="project-preview" href="YOUR_DRIVE_PREVIEW_LINK_02" target="_blank">▶ Preview</a><a class="project-buy" href="https://wa.me/8801767760741?text=Hello%20Apon%20Editing%20Studio,%20I%20want%20to%20buy%20PROJECT%20NAME%2002" target="_blank">Buy</a></div></div></div></div><div class="project-item"><div class="project-thumb"><img src="project-03.jpg" alt="Project 03 Thumbnail"><span class="project-number">PROJECT 03</span></div><div class="project-info"><h3>PROJECT NAME 03</h3><p>Replace this with your project description.</p><div class="project-bottom"><span class="project-price">৳1,500</span><div class="project-actions"><a class="project-preview" href="YOUR_DRIVE_PREVIEW_LINK_03" target="_blank">▶ Preview</a><a class="project-buy" href="https://wa.me/8801767760741?text=Hello%20Apon%20Editing%20Studio,%20I%20want%20to%20buy%20PROJECT%20NAME%2003" target="_blank">Buy</a></div></div></div></div><div class="project-item"><div class="project-thumb"><img src="project-04.jpg" alt="Project 04 Thumbnail"><span class="project-number">PROJECT 04</span></div><div class="project-info"><h3>PROJECT NAME 04</h3><p>Replace this with your project description.</p><div class="project-bottom"><span class="project-price">৳1,500</span><div class="project-actions"><a class="project-preview" href="YOUR_DRIVE_PREVIEW_LINK_04" target="_blank">▶ Preview</a><a class="project-buy" href="https://wa.me/8801767760741?text=Hello%20Apon%20Editing%20Studio,%20I%20want%20to%20buy%20PROJECT%20NAME%2004" target="_blank">Buy</a></div></div></div></div><div class="project-item"><div class="project-thumb"><img src="project-05.jpg" alt="Project 05 Thumbnail"><span class="project-number">PROJECT 05</span></div><div class="project-info"><h3>PROJECT NAME 05</h3><p>Replace this with your project description.</p><div class="project-bottom"><span class="project-price">৳1,500</span><div class="project-actions"><a class="project-preview" href="YOUR_DRIVE_PREVIEW_LINK_05" target="_blank">▶ Preview</a><a class="project-buy" href="https://wa.me/8801767760741?text=Hello%20Apon%20Editing%20Studio,%20I%20want%20to%20buy%20PROJECT%20NAME%2005" target="_blank">Buy</a></div></div></div></div><div class="project-item"><div class="project-thumb"><img src="project-06.jpg" alt="Project 06 Thumbnail"><span class="project-number">PROJECT 06</span></div><div class="project-info"><h3>PROJECT NAME 06</h3><p>Replace this with your project description.</p><div class="project-bottom"><span class="project-price">৳1,500</span><div class="project-actions"><a class="project-preview" href="YOUR_DRIVE_PREVIEW_LINK_06" target="_blank">▶ Preview</a><a class="project-buy" href="https://wa.me/8801767760741?text=Hello%20Apon%20Editing%20Studio,%20I%20want%20to%20buy%20PROJECT%20NAME%2006" target="_blank">Buy</a></div></div></div></div><div class="project-item"><div class="project-thumb"><img src="project-07.jpg" alt="Project 07 Thumbnail"><span class="project-number">PROJECT 07</span></div><div class="project-info"><h3>PROJECT NAME 07</h3><p>Replace this with your project description.</p><div class="project-bottom"><span class="project-price">৳1,500</span><div class="project-actions"><a class="project-preview" href="YOUR_DRIVE_PREVIEW_LINK_07" target="_blank">▶ Preview</a><a class="project-buy" href="https://wa.me/8801767760741?text=Hello%20Apon%20Editing%20Studio,%20I%20want%20to%20buy%20PROJECT%20NAME%2007" target="_blank">Buy</a></div></div></div></div><div class="project-item"><div class="project-thumb"><img src="project-08.jpg" alt="Project 08 Thumbnail"><span class="project-number">PROJECT 08</span></div><div class="project-info"><h3>PROJECT NAME 08</h3><p>Replace this with your project description.</p><div class="project-bottom"><span class="project-price">৳1,500</span><div class="project-actions"><a class="project-preview" href="YOUR_DRIVE_PREVIEW_LINK_08" target="_blank">▶ Preview</a><a class="project-buy" href="https://wa.me/8801767760741?text=Hello%20Apon%20Editing%20Studio,%20I%20want%20to%20buy%20PROJECT%20NAME%2008" target="_blank">Buy</a></div></div></div></div><div class="project-item"><div class="project-thumb"><img src="project-09.jpg" alt="Project 09 Thumbnail"><span class="project-number">PROJECT 09</span></div><div class="project-info"><h3>PROJECT NAME 09</h3><p>Replace this with your project description.</p><div class="project-bottom"><span class="project-price">৳1,500</span><div class="project-actions"><a class="project-preview" href="YOUR_DRIVE_PREVIEW_LINK_09" target="_blank">▶ Preview</a><a class="project-buy" href="https://wa.me/8801767760741?text=Hello%20Apon%20Editing%20Studio,%20I%20want%20to%20buy%20PROJECT%20NAME%2009" target="_blank">Buy</a></div></div></div></div><div class="project-item"><div class="project-thumb"><img src="project-10.jpg" alt="Project 10 Thumbnail"><span class="project-number">PROJECT 10</span></div><div class="project-info"><h3>PROJECT NAME 10</h3><p>Replace this with your project description.</p><div class="project-bottom"><span class="project-price">৳1,500</span><div class="project-actions"><a class="project-preview" href="YOUR_DRIVE_PREVIEW_LINK_10" target="_blank">▶ Preview</a><a class="project-buy" href="https://wa.me/8801767760741?text=Hello%20Apon%20Editing%20Studio,%20I%20want%20to%20buy%20PROJECT%20NAME%2010" target="_blank">Buy</a></div></div></div></div></div></div></div>
+<script>function openProjectModal(){document.getElementById('projectModal').classList.add('active');document.body.classList.add('modal-open')}function closeProjectModal(e){if(e&&e.target.closest('.project-modal-inner')&&!e.target.closest('.project-close'))return;document.getElementById('projectModal').classList.remove('active');document.body.classList.remove('modal-open')}document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.getElementById('projectModal').classList.remove('active');document.body.classList.remove('modal-open')}});</script>
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section
+class="section contact"
+id="contact">
+
+
+<h2>
+Let’s Work Together
+</h2>
+
+
+<p>
+Have a project in mind?
+Let’s turn your vision into a film that stands out.
+</p>
+
+
+<p>
+
+<strong>
+WhatsApp:
+</strong>
+
+<a
+href="https://wa.me/8801767760741"
+target="_blank">
+
+01767760741
+
+</a>
+
+</p>
+
+
+<p>
+
+<strong>
+Facebook:
+</strong>
+
+<a
+href="https://www.facebook.com/aminulislam0741"
+target="_blank">
+
+@aminulislam0741
+
+</a>
+
+</p>
+
+
+<p>
+
+<strong>
+Instagram:
+</strong>
+
+<a
+href="https://www.instagram.com/aminul7584islam"
+target="_blank">
+
+@aminul7584islam
+
+</a>
+
+</p>
+
+
+<p>
+
+<strong>
+APON EDITING STUDIO
+</strong>
+
+</p>
+
+</section>
+
+
+</body>
+</html>
